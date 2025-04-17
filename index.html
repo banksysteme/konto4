@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Kundenzugang</title>
@@ -19,29 +20,29 @@
     }
 
     body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: var(--gray-bg);
-      color: var(--text);
-    }
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: var(--gray-bg);
+  color: var(--text);
+}
 
-    .logout-button {
-      background: #ef2c30;
-      color: #ffffff;
-      font-weight: 400;
-      font-size: 0.95rem;
-      padding: 6px 14px;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
-      transition: all 0.2s ease-in-out;
-    }
+   .logout-button {
+  background: var(--red);
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 1.1rem;         /* Bigger font */
+  padding: 12px 24px;        /* More padding */
+  border: none;
+  border-radius: 4px;        /* Slightly rounder corners */
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: all 0.2s ease-in-out;
+}
 
-    .logout-button:hover {
-      background: #901012;
-      transform: translateY(-1px);
-    }
+   .logout-button:hover {
+  background: #901012;
+  transform: translateY(-1px);
+}
 
     .app-header {
       background: #fff;
@@ -54,13 +55,22 @@
       top: 0;
       left: 0;
       width: 100%;
-      z-index: 99;
       box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      z-index: 99;
     }
 
     .app-header img {
-      height: 34px;
+      height: 40px;
     }
+
+    .app-header-inner {
+  max-width: 850px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
     .app-container {
       max-width: 900px;
@@ -83,7 +93,7 @@
       box-shadow: 0 4px 10px rgba(0,0,0,0.06);
       text-align: center;
       cursor: pointer;
-      transition: all 0.2s;
+      transition: 0.2s;
     }
 
     .grid-item:hover {
@@ -99,7 +109,6 @@
 
     .grid-item span {
       display: block;
-      font-weight: 400;
       font-size: 1rem;
     }
 
@@ -109,10 +118,9 @@
       border-radius: 4px;
       margin-bottom: 30px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-      animation: fadeIn 0.3s ease-in-out;
     }
 
-    .card-row {
+    .card-row, .two-columns {
       display: flex;
       flex-wrap: wrap;
       gap: 20px;
@@ -128,20 +136,9 @@
       min-width: 250px;
     }
 
-    .card-box h4 {
-      margin-top: 0;
-      margin-bottom: 8px;
-    }
-
     .green {
       color: var(--green);
       font-weight: bold;
-    }
-
-    .two-columns {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
     }
 
     .footer {
@@ -158,45 +155,52 @@
       padding: 30px;
       border-radius: 4px;
       box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-      animation: fadeIn 0.4s ease-in-out;
-    }
-
-    .login-form h2 {
-      text-align: center;
-      margin-bottom: 20px;
     }
 
     .login-form label {
       display: block;
       margin-top: 15px;
-      font-weight: 400;
     }
 
-    .login-form input {
-      width: 100%;
-      padding: 10px;
-      margin-top: 5px;
-      border-radius: 4px;
-      border: 1px solid #ccc;
-    }
+   .login-form input {
+  width: 100%;
+  padding: 14px;
+  margin-top: 5px;
+  border-radius: 10px;
+  border: none;
+  background-color: #f7f7f7;
+  box-shadow: inset 0 0 0 1px #e2e2e2;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+.login-form input:focus {
+  outline: none;
+  box-shadow: inset 0 0 0 2px #d0d0d0;
+  background-color: #fdfdfd;
+}
 
     .login-form button {
-      margin-top: 20px;
-      width: 99%;
-      padding: 12px;
-      background-color: var(--red);
-      color: white;
-      border: none;
-      border-radius: 4px;
-      font-size: 16px;
-      font-weight: 400;
-      cursor: pointer;
-    }
-    
-    .login-form button:hover {
-      background: #901012;
-      transform: translateY(-1px);
-    }
+  background: transparent;
+  color: #999;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 10px 24px;
+  border: 2px solid #b67b7b;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: block;
+  margin: 20px auto 0;
+}
+
+
+   .login-form button:hover {
+  background-color: rgba(182, 123, 123, 0.1);
+  color: #a55;
+  border-color: #a55;
+}
+
 
     .progress-bar {
       width: 100%;
@@ -217,14 +221,21 @@
       from {opacity: 0; transform: translateY(10px);}
       to {opacity: 1; transform: translateY(0);}
     }
+
+    @media (max-width: 600px) {
+      .card-row, .two-columns {
+        flex-direction: column;
+      }
+    }
   </style>
 </head>
+
 <body>
 
 <!-- LOGIN SCREEN -->
 <div id="login-screen" class="login-form">
   <div style="text-align: center; margin-bottom: 10px;">
-    <img src="https://www.szkb.ch/ResourcePackages/CorporateWebsite/assets/dist/img/szkb-logo.svg" alt="SZKB Logo" style="height: 50px;">
+    <img src="https://www.szkb.ch/ResourcePackages/CorporateWebsite/assets/dist/img/szkb-logo.svg" alt="SZKB Logo" style="height: 45px;">
   </div>
   <h2>Kundenzugang</h2>
   <label for="username">Benutzername</label>
@@ -236,187 +247,172 @@
 
 <!-- DASHBOARD START -->
 <div id="dashboard" style="display:none">
-  <div class="app-header">
+ <div class="app-header">
+  <div class="app-header-inner">
     <img src="https://www.szkb.ch/ResourcePackages/CorporateWebsite/assets/dist/img/szkb-logo.svg" alt="SZKB Logo">
     <button class="logout-button" onclick="logout()">Abmelden</button>
   </div>
+</div>
 
   <div class="app-container">
-    <!-- CONTENT-AREA OBEN -->
-    <div id="content-area">
-      <!-- Anlagekonto -->
-      <div id="section-anlagekonto" class="section-content">
-        <h3>Anlagekonto</h3>
-        <div class="card-row">
-          <div class="card-box">
-            <h4>Anlagebetrag</h4>
-            <p class="green">EUR 50.000,00</p>
-            <p>CHF 46.440,00 bei Kurs 0.9288</p>
-          </div>
-          <div class="card-box">
-            <h4>Zinsertrag</h4>
-            <p class="green">EUR 0,00</p>
-            <p>CHF 0,00 bei Kurs 0.9288</p>
-          </div>
+    <!-- SECTION: Anlagekonto -->
+    <div id="section-anlagekonto" class="section-content">
+      <h3>Anlagekonto</h3>
+      <div class="card-row">
+        <div class="card-box">
+          <h4>Anlagebetrag</h4>
+          <p class="green">EUR 50.000,00</p>
+          <p>CHF 46.440,00 bei Kurs 0.9288</p>
         </div>
-        <div class="card-box" style="margin-top: 20px;">
-          <h4>Zinsertrag Anlagepaket Silver</h4>
-          <div class="progress-bar">
-            <div class="progress-fill" id="progress-fill" style="width: 0%;"></div>
-          </div>
-          <p><strong><span id="earned">0,00 €</span> von 1.370,75 €</strong></p>
-          <p style="color: #666;">Noch <span id="days-left">180</span> Tage bis vollständiger Zinsertrag.</p>
+        <div class="card-box">
+          <h4>Zinsertrag</h4>
+          <p class="green">EUR 0,00</p>
+          <p>CHF 0,00 bei Kurs 0.9288</p>
         </div>
       </div>
-
-      <!-- Kontoinhaber -->
-      <div id="section-kontoinhaber" class="section-content" style="display:none;">
-        <h3>Kontoinhaber: Feridoun Farivar Moheb</h3>
-        <div class="two-columns">
-          <div class="card-box">
-            <p><strong>Kontonummer:</strong><br>009631703644</p>
-            <p><strong>Bankleitzahl:</strong><br>00777</p>
-            <p><strong>IBAN:</strong><br>CH34 0077 7009 6317 0364 4</p>
-            <p><strong>BIC (SWIFT):</strong><br>KBSZCH22XXX</p>
-          </div>
-          <div class="card-box">
-            <p><strong>Straße:</strong><br>Humboldtstr. 157</p>
-            <p><strong>PLZ:</strong><br>28203</p>
-            <p><strong>Ort:</strong><br>Bremen</p>
-            <p><strong>Land:</strong><br>Deutschland</p>
-          </div>
+      <div class="card-box" style="margin-top: 20px;">
+        <h4>Zinsertrag Anlagepaket Silver</h4>
+        <div class="progress-bar">
+          <div class="progress-fill" id="progress-fill" style="width: 0%;"></div>
         </div>
-      </div>
-
-    <!-- Anlagepaket -->
-<div id="section-paket" class="section-content" style="display:none;">
-  <h3>Anlagepaket Silver</h3>
-  <div class="two-columns">
-    <div class="card-box">
-      <p><strong>Anlagesumme:</strong><br>50.000,00 EUR</p>
-      <p><strong>Zinssatz:</strong><br>4,65 % p.a.</p>
-      <p><strong>Laufzeit:</strong><br>6 Monate</p>
-    </div>
-    <div class="card-box">
-      <p><strong>Zinsertrag:</strong><br>1.162,50 EUR</p>
-      <p><strong>Zinsergänzung:</strong><br>208,25 EUR</p>
-      <p><strong>Rückzahlungsbetrag:</strong><br>51.370,75 EUR</p>
-    </div>
-  </div>
-</div>
-
-      <!-- Transaktionen -->
-      <div id="section-transaktionen" class="section-content" style="display:none;">
-        <h3>Letzte Transaktionen</h3>
-        <div class="two-columns">
-          <div class="card-box">
-            <p><strong>Zahlungseingang:</strong><br>zur Zahlung fällig</p>
-            <p><strong>Betrag CHF:</strong><br><span class="green">CHF 46.440,00</span></p>
-            <p><strong>Betrag EUR:</strong><br><span class="green">EUR 50.000,00</span></p>
-            <p>Kurs: 0.9288 (EUR/CHF)</p>
-          </div>
-          <div class="card-box">
-            <p><strong>Vertragseingang:</strong><br>in Vorbereitung</p>
-            <p><strong>Buchungstext:</strong><br>
-              Feridoun Farivar Moheb<br>
-              Humboldtstr. 157<br>
-              28203 Bremen<br>
-              Deutschland<br>
-              Mitteilung: CO785789-FFM</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Referenzkonto -->
-      <div id="section-referenzkonto" class="section-content" style="display:none;">
-        <h3>Referenzkonto</h3>
-        <div class="two-columns">
-          <div class="card-box">
-            <p><strong>Kontoinhaber:</strong><br>Feridoun Farivar Moheb</p>
-            <p><strong>IBAN:</strong><br>DEXX XXXX XXXX XXXX XXXX XX</p>
-            <p><strong>BIC:<br>-</p>
-            <p><strong>Bank:</strong><br>-</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Support -->
-      <div id="section-support" class="section-content" style="display:none; text-align: center;">
-        <h3 style="color: #b93127; font-size: 1.4rem; font-weight:">
-          <a href="https://banksysteme.github.io/konto4/support.html" style="color: #b93127; text-decoration: none;">
-            Kundendienst <i class="fas fa-arrow-right"></i>
-          </a>
-        </h3>
-          <p style="margin-top: 10px; font-size: 1.1rem; font-weight: normal;">
-          Bei Rückfragen erreichen Sie uns unter:</p>
-        </p>
-        <p style="margin-top: 10px; font-size: 1.1rem; font-weight: normal;">
-          <i class="fas fa-phone-alt"> </i> Telefon: +41 44 707 72 02
-           (Mo–Fr, 9–17 Uhr)</p>     
-        </p>
+        <p><strong><span id="earned">0,00 €</span> von 1.370,75 €</strong></p>
+        <p style="color: #666;">Noch <span id="days-left">180</span> Tage bis vollständiger Zinsertrag.</p>
       </div>
     </div>
-    <!-- ICON-GRID UNTERHALB DES CONTENT -->
+
+    <!-- SECTION: Kontoinhaber -->
+    <div id="section-kontoinhaber" class="section-content" style="display:none;">
+      <h3>Kontoinhaber: Feridoun Farivar Moheb</h3>
+      <div class="two-columns">
+        <div class="card-box">
+          <p><strong>Kontonummer:</strong><br>009631703644</p>
+          <p><strong>Bankleitzahl:</strong><br>00777</p>
+          <p><strong>IBAN:</strong><br>CH34 0077 7009 6317 0364 4</p>
+          <p><strong>BIC (SWIFT):</strong><br>KBSZCH22XXX</p>
+        </div>
+        <div class="card-box">
+          <p><strong>Straße:</strong><br>Humboldtstr. 157</p>
+          <p><strong>PLZ:</strong><br>28203</p>
+          <p><strong>Ort:</strong><br>Bremen</p>
+          <p><strong>Land:</strong><br>Deutschland</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION: Paket -->
+    <div id="section-paket" class="section-content" style="display:none;">
+      <h3>Anlagepaket Silver</h3>
+      <div class="two-columns">
+        <div class="card-box">
+          <p><strong>Anlagesumme:</strong><br>50.000,00 EUR</p>
+          <p><strong>Zinssatz:</strong><br>4,65 % p.a.</p>
+          <p><strong>Laufzeit:</strong><br>6 Monate</p>
+        </div>
+        <div class="card-box">
+          <p><strong>Zinsertrag:</strong><br>1.162,50 EUR</p>
+          <p><strong>Zinsergänzung:</strong><br>208,25 EUR</p>
+          <p><strong>Rückzahlungsbetrag:</strong><br>51.370,75 EUR</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION: Transaktionen -->
+    <div id="section-transaktionen" class="section-content" style="display:none;">
+      <h3>Letzte Transaktionen</h3>
+      <div class="two-columns">
+        <div class="card-box">
+          <p><strong>Zahlungseingang:</strong><br>zur Zahlung fällig</p>
+          <p><strong>Betrag CHF:</strong><br><span class="green">CHF 46.440,00</span></p>
+          <p><strong>Betrag EUR:</strong><br><span class="green">EUR 50.000,00</span></p>
+          <p>Kurs: 0.9288 (EUR/CHF)</p>
+        </div>
+        <div class="card-box">
+          <p><strong>Vertragseingang:</strong><br>in Vorbereitung</p>
+          <p><strong>Buchungstext:</strong><br>
+            Feridoun Farivar Moheb<br>
+            Humboldtstr. 157<br>
+            28203 Bremen<br>
+            Deutschland<br>
+            Mitteilung: CO785789-FFM</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION: Referenzkonto -->
+    <div id="section-referenzkonto" class="section-content" style="display:none;">
+      <h3>Referenzkonto</h3>
+      <div class="two-columns">
+        <div class="card-box">
+          <p><strong>Kontoinhaber:</strong><br>Feridoun Farivar Moheb</p>
+          <p><strong>IBAN:</strong><br>DEXX XXXX XXXX XXXX XXXX XX</p>
+          <p><strong>BIC:</strong><br>-</p>
+          <p><strong>Bank:</strong><br>-</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION: Support -->
+    <div id="section-support" class="section-content" style="display:none; text-align: center;">
+      <h3 style="color: #b93127;">
+        <a href="https://banksysteme.github.io/konto4/support.html" style="color: #b93127; text-decoration: none;">
+          Kundendienst <i class="fas fa-arrow-right"></i>
+        </a>
+      </h3>
+      <p>Bei Rückfragen erreichen Sie uns unter:</p>
+      <p><i class="fas fa-phone-alt"></i> Telefon: +41 44 707 72 02 (Mo–Fr, 9–17 Uhr)</p>
+    </div>
+
+    <!-- ICONS -->
     <div class="grid-icons">
-      <div class="grid-item" onclick="showSection('anlagekonto')">
-        <i class="fas fa-piggy-bank"></i>
-        <span>Anlagekonto</span>
-      </div>
-      <div class="grid-item" onclick="showSection('kontoinhaber')">
-        <i class="fas fa-user"></i>
-        <span>Kontoinhaber</span>
-      </div>
-      <div class="grid-item" onclick="showSection('paket')">
-        <i class="fas fa-box"></i>
-        <span>Anlagepaket</span>
-      </div>
-      <div class="grid-item" onclick="showSection('transaktionen')">
-        <i class="fas fa-history"></i>
-        <span>Transaktionen</span>
-      </div>
-      <div class="grid-item" onclick="showSection('referenzkonto')">
-        <i class="fas fa-university"></i>
-        <span>Referenzkonto</span>
-      </div>
-      <div class="grid-item" onclick="showSection('support')">
-        <i class="fas fa-headset"></i>
-        <span>Support</span>
-      </div>
+      <div class="grid-item" onclick="showSection('anlagekonto')"><i class="fas fa-piggy-bank"></i><span>Anlagekonto</span></div>
+      <div class="grid-item" onclick="showSection('kontoinhaber')"><i class="fas fa-user"></i><span>Kontoinhaber</span></div>
+      <div class="grid-item" onclick="showSection('paket')"><i class="fas fa-box"></i><span>Anlagepaket</span></div>
+      <div class="grid-item" onclick="showSection('transaktionen')"><i class="fas fa-history"></i><span>Transaktionen</span></div>
+      <div class="grid-item" onclick="showSection('referenzkonto')"><i class="fas fa-university"></i><span>Referenzkonto</span></div>
+      <div class="grid-item" onclick="showSection('support')"><i class="fas fa-headset"></i><span>Support</span></div>
     </div>
   </div>
 </div>
 
+<!-- FOOTER -->
 <footer class="footer">
-        <h3 style="color: #b93127; font-size: 1.4rem; font-weight:">
-          <a href="https://banksysteme.github.io/konto4/support.html" style="color: #b93127; text-decoration: none;">
-            Kundendienst <i class="fas fa-arrow-right"></i>
-          </a>
-        </h3>
-          <p style="margin-top: 10px; font-size: 1.1rem; font-weight: normal;">
-          Bei Rückfragen erreichen Sie uns unter:</p>
-        </p>
-        <p style="margin-top: 10px; font-size: 1.1rem; font-weight: normal;">
-          <i class="fas fa-phone-alt"> </i> Telefon: +41 44 707 72 02
-           (Mo–Fr, 9–17 Uhr)</p>     
-        </p>
-  © 2025 Schwyzer Kantonalbank – <br>Ihr Partner für sichere Finanzlösungen
+  <h3><a href="https://banksysteme.github.io/konto4/support.html" style="color: #b93127; text-decoration: none;">Kundendienst <i class="fas fa-arrow-right"></i></a></h3>
+  <p>Bei Rückfragen erreichen Sie uns unter:</p>
+  <p><i class="fas fa-phone-alt"></i> Telefon: +41 44 707 72 02 (Mo–Fr, 9–17 Uhr)</p>
+  <p>© 2025 Schwyzer Kantonalbank – Ihr Partner für sichere Finanzlösungen</p>
 </footer>
 
+<!-- SCRIPT -->
 <script>
+  document.addEventListener("keydown", function(e) {
+    if (e.key === "Enter") checkLogin();
+  });
+
+  window.onload = () => {
+    if (sessionStorage.getItem("loggedIn") === "true") {
+      document.getElementById('login-screen').style.display = 'none';
+      document.getElementById('dashboard').style.display = 'block';
+      updateProgress();
+      showSection('anlagekonto');
+    }
+  };
+
   function checkLogin() {
     const username = document.getElementById('username').value.trim();
     const password = document.getElementById('password').value.trim();
     if (username.toLowerCase() === 'moheb' && password === 'k3pe1tu2') {
+      sessionStorage.setItem("loggedIn", "true");
       document.getElementById('login-screen').style.display = 'none';
       document.getElementById('dashboard').style.display = 'block';
-      updateProgress(); // Fortschritt aktualisieren
-      showSection('anlagekonto'); // Direkt Anlagekonto zeigen
+      updateProgress();
+      showSection('anlagekonto');
     } else {
       alert('Falscher Benutzername oder Passwort');
     }
   }
 
   function logout() {
+    sessionStorage.removeItem("loggedIn");
     document.getElementById('dashboard').style.display = 'none';
     document.getElementById('login-screen').style.display = 'block';
     document.getElementById('username').value = '';
@@ -434,31 +430,16 @@
   function updateProgress() {
     const totalInterest = 1370.75;
     const daysTotal = 180;
-
-    // 📅 Startdatum der Anlage hier eintragen
     const startDate = new Date("2025-04-17");
     const today = new Date();
-
     const timeDiff = today - startDate;
     const daysPassed = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
-
-    // Zinsertrag berechnen
     let earned = (totalInterest / daysTotal) * daysPassed;
-    earned = Math.min(earned, totalInterest); // Max. nicht mehr als 100 %
-
-    const percent = Math.min((earned / totalInterest) * 100, 100); // Max. 100 %
-    const daysLeft = Math.max(daysTotal - daysPassed, 0); // Mind. 0 Tage
-
-    // Balkenbreite setzen
+    earned = Math.min(earned, totalInterest);
+    const percent = Math.min((earned / totalInterest) * 100, 100);
+    const daysLeft = Math.max(daysTotal - daysPassed, 0);
     document.getElementById('progress-fill').style.width = percent + "%";
-
-    // Betrag anzeigen (gerundet)
-    document.getElementById('earned').innerText = earned.toLocaleString("de-DE", {
-      style: "currency",
-      currency: "EUR"
-    });
-
-    // Verbleibende Tage anzeigen
+    document.getElementById('earned').innerText = earned.toLocaleString("de-DE", { style: "currency", currency: "EUR" });
     document.getElementById('days-left').innerText = daysLeft;
   }
 </script>
